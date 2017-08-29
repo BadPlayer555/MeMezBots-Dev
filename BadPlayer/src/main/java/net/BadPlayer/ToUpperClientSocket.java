@@ -6,6 +6,7 @@ import java.nio.ByteBuffer;
 import java.util.concurrent.CountDownLatch;
 
 	import org.eclipse.jetty.websocket.api.Session;
+import org.eclipse.jetty.websocket.api.WriteCallback;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketError;
@@ -59,13 +60,17 @@ import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 			}
 		}
 		
-		public void sendMessage(ByteBuffer buf) {
-			try {
-				session.getRemote().sendBytes(buf);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		public void sendMessage(ByteBuffer buf) throws IOException {
+			/*session.getRemote().sendBytes(buf, new WriteCallback() {
+                public void writeSuccess() {
+                    //assertThat(true, is(true));
+                }
+
+                public void writeFailed(Throwable x) {
+                    //assertThat(true, is(false));
+                }
+            });*/
+			session.getRemote().sendBytes(buf);
 		}
 		
 		public CountDownLatch getLatch() {

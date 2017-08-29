@@ -1,5 +1,6 @@
 package net.BadPlayer;
 
+import java.io.IOException;
 import java.net.HttpCookie;
 import java.net.URI;
 import java.nio.ByteBuffer;
@@ -12,6 +13,8 @@ import org.eclipse.jetty.websocket.client.ClientUpgradeRequest;
 import org.eclipse.jetty.websocket.client.WebSocketClient;
 
 public class AgarioClient {
+	
+	
 	
 	private static ToUpperClientSocket socket = new ToUpperClientSocket();
 	private static WebSocketClient client = new WebSocketClient();
@@ -90,7 +93,7 @@ public class AgarioClient {
         }
 	}
 	
-	public static void movetoshit(){
+	public static void movetoshit() throws IOException{
 		/*ByteBuffer buf3 = ByteBuffer.allocate(21);
 		buf3.order(ByteOrder.LITTLE_ENDIAN);
 		buf3.put(0, (byte)16);

@@ -9,35 +9,32 @@ import java.util.TimerTask;
  */
 public class App 
 {
-	public static String serverIp = "ws://37.187.76.129:11022/";
+	public static String serverIp = "ws://37.187.76.129:11027/";
     public static void main( String[] args ) throws Exception
     {
-    	//TODO: MultiThread
-    	Thread t1 = new Thread(new BotsMultiThread(), "Thread1"); 
+    	//ODO: MultiThread
+    	/*Thread t1 = new Thread(new BotsMultiThread(), "Thread1"); 
     	t1.start();
-    	//Thread.sleep(100);
-    	/*Thread t2 = new Thread(new BotsMultiThread(), "Thread2");
-    	t2.join(100);
-    	/*Thread t3 = new Thread(new BotsMultiThread(), "Thread3");
-    	t3.start();
-    	Thread t4 = new Thread(new BotsMultiThread(), "Thread4");
-    	t4.start();
-    	Thread t5 = new Thread(new BotsMultiThread(), "Thread5");
-    	t5.start();*/
+    	Thread.sleep(100);
+    	Thread t2 = new Thread(new BotsMultiThread(), "Thread2");
+    	t2.start();
+    	Thread.sleep(100);
+    	//Thread t3 = new Thread(new BotsMultiThread(), "Thread3");
+    	//t3.start();
+    	//Thread t4 = new Thread(new BotsMultiThread(), "Thread4");
+    	//t4.start();
+    	//Thread t5 = new Thread(new BotsMultiThread(), "Thread5");
+    	//t5.start();*/
     	
     	//TODO:working shit
     	
-    	/*for(int i = 0; i < 50; i++){
-    	AgarioClient.connectshit(serverIp);
-    	System.out.println("Bot : " + i + "Connected");
-    	AgarioClient.spawnshit("123");
-    	while(i == 49){
-    		System.out.println("loop spawning");
-    	AgarioClient.spawnshit("123");
-    	}
-    	AgarioClient.movetoshit();
+    	for(int i = 0; i < 50; i++){
+	    	AgarioClient.connectshit(serverIp);
+	    	System.out.println("Bot : " + i + "Connected");
+	    	AgarioClient.spawnshit("");
+	    	AgarioClient.movetoshit();
     	Thread.sleep(200);
-    	}*/
+    	}
     	/*Timer timer = new Timer();
         TimerTask task = new TimerTask() {
         	public void run()
